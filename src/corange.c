@@ -1,4 +1,6 @@
 #include "corange.h"
+//gwald
+#include "entities/animated_char.h"
 
 static void corange_signal(int sig) {
   switch(sig) {
@@ -98,6 +100,10 @@ void corange_init(const char* core_assets_path) {
   
   entity_handler(static_object, static_object_new, static_object_delete);
   entity_handler(animated_object, animated_object_new, animated_object_delete);
+
+  //gwald
+  entity_handler(animated_char, animated_char_new, animated_char_delete);
+
   entity_handler(physics_object, physics_object_new, physics_object_delete);
   entity_handler(instance_object, instance_object_new, instance_object_delete);
   
