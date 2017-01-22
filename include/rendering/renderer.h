@@ -49,6 +49,7 @@ enum {
   RO_TYPE_PLANE      = 12,
   RO_TYPE_LINE       = 13,
   RO_TYPE_POINT      = 14,
+  RO_TYPE_ANIMATED_CHAR   = 15, //gwald
 };
 
 typedef struct {
@@ -69,6 +70,7 @@ typedef struct {
     static_object* static_object;
     instance_object* instance_object;
     animated_object* animated_object;
+    animated_char* animated_char;
     landscape* landscape;
     particles* particles;
     
@@ -82,6 +84,7 @@ typedef struct {
 render_object render_object_static(static_object* s);
 render_object render_object_instance(instance_object* s);
 render_object render_object_animated(animated_object* a);
+render_object render_char_animated(animated_char* a);
 render_object render_object_particles(particles* p);
 render_object render_object_light(light* l);
 render_object render_object_axis(mat4 a);
