@@ -7,17 +7,13 @@
 ***
 **/
 
-#ifndef animated_object_h
-#define animated_object_h
+#ifndef animated_char_h
+#define animated_char_h
 
 #include "cengine.h"
 #include "casset.h"
 
 #include "assets/skeleton.h"
-
-
-//gwald
-#include "entities/animated_char.h"
 
 typedef struct {
   
@@ -28,18 +24,19 @@ typedef struct {
   float animation_time;
 
   asset_hndl renderable;
-  asset_hndl animation;
+  asset_hndl anim_top;
+  asset_hndl anim_bot;
   asset_hndl skeleton;
   
   frame* pose;
   
-} animated_object;
+} animated_char;
 
-animated_object* animated_object_new();
-void animated_object_delete(animated_object* ao);
+animated_char* animated_char_new();
+void animated_char_delete(animated_char* ao);
 
-void animated_object_load_skeleton(animated_object* ao, asset_hndl ah);
+void animated_char_load_skeleton(animated_char* ao, asset_hndl ah);
 
-void animated_object_update(animated_object* ao, float timestep);
+void animated_char_update(animated_char* ao, float timestep);
 
 #endif
